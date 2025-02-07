@@ -1,6 +1,8 @@
-# run : 
+ 
+### compile:
 # make
-# make run / ./met_test
+### run:
+#make run #OR# ./met_test
 
 
 cxx = g++
