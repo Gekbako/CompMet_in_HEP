@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+void plot_data()
 {
     char fname[20] = "data.root";
     char figname[30] = "histogram.png";
@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     TTree *tree = (TTree*)file->Get("tree");
     if (!tree) {
         cerr << "Error: Tree not found in: " << fname << endl;
-        return 1;
+        exit(1);
     }
 
     // histogram
@@ -56,9 +56,10 @@ int main(int argc, char* argv[])
     c1->SaveAs(figname);
     cout << "Histogram saved in file: " << figname << endl;
 
-    file->Close();
+    c1->Close();
     delete hist;
+    file->Close();
     delete c1;
-
-    return 0;
+    delete file;
+    
 }

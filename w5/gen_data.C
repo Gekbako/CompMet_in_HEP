@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+void gen_data()
 {
     char datafname[20] = "data.root";
     TFile *file = new TFile(datafname, "RECREATE");
@@ -30,5 +30,4 @@ int main(int argc, char* argv[])
     file->Close();
     
     cout << "Data written to file: "<<datafname<<endl;
-    return 0;
 }
